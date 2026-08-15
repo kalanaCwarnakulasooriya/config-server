@@ -1,0 +1,20 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations:
+            - classpath:/config
+            - file:./config-repo
+# To use Git instead of native local directory, activate 'git' profile or configure:
+#       git:
+#         uri: https://github.com/your-org/e-commerce-config-repo.git
+#         default-label: main
+#         clone-on-start: true
